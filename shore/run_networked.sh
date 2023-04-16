@@ -10,9 +10,6 @@ MAXREQS=2000
 
 DUMMYREQS=1000000 # set this really high so MAXREQS controls execution
 
-# Point this to an appropriate location on your system
-SCRATCH_DIR=/doesnotexist
-
 # Setup
 TMP=$(mktemp -d --tmpdir=${SCRATCH_DIR})
 ln -s $TMP scratch

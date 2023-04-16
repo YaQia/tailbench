@@ -110,3 +110,9 @@ We recommend running latency-sensitive applicationwith real time priority (using
 chrt, for instance), to avoid interference from background daemons etc. It is
 also advisable to disable deep sleep states, and limit the system to shallow
 sleep states like C1/C1E.
+
+
+FORK NOTES
+==========
+
+I fork this repo from http://tailbench.csail.mit.edu/, and fix some build bug, to prepare for building in container
