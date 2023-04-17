@@ -30,14 +30,14 @@ sed -i -e "s#@NTHREADS#$THREADS#g" shore.conf
 
 # Launch Server
 TBENCH_MAXREQS=${MAXREQS} TBENCH_WARMUPREQS=${WARMUPREQS} \
-    chrt -r 99 shore-kits/shore_kits_server_networked -i cmdfile &
+    shore-kits/shore_kits_server_networked -i cmdfile &
 echo $! > server.pid
 
 sleep 5
 
 # Launch Client
 TBENCH_QPS=${QPS} TBENCH_MINSLEEPNS=10000 \
-     chrt -r 99 shore-kits/shore_kits_client_networked -i cmdfile &
+    shore-kits/shore_kits_client_networked -i cmdfile &
 echo $! > client.pid
 
 wait $(cat client.pid)

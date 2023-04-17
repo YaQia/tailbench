@@ -35,7 +35,7 @@ sed -i -e "s#@NTHREADS#$THREADS#g" shore.conf
 
 # Run app
 TBENCH_QPS=${QPS} TBENCH_MAXREQS=${MAXREQS} TBENCH_WARMUPREQS=${WARMUPREQS} \
-    TBENCH_MINSLEEPNS=10000 chrt -r 99 ${BIN} -i cmdfile
+    TBENCH_MINSLEEPNS=10000 ${BIN} -i cmdfile
 
 # Cleanup
 rm -f log scratch cmdfile db-tpcc-1 diskrw shore.conf info

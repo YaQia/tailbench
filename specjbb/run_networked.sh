@@ -26,7 +26,7 @@ then
 fi
 ln -sf libtbench_networked_jni.so libtbench_jni.so
 
-chrt -r 99 ${JDK_PATH}/bin/java -Djava.library.path=. -XX:ParallelGCThreads=1 \
+${JDK_PATH}/bin/java -Djava.library.path=. -XX:ParallelGCThreads=1 \
     -XX:+UseSerialGC -XX:NewRatio=1 -XX:NewSize=7000m -Xloggc:gc.log \
     -Xms10000m -Xmx10000m -Xrs spec.jbb.JBBmain -propfile SPECjbb_mt.props &
 
@@ -34,7 +34,7 @@ echo $! > server.pid
 
 sleep 10
 
-chrt -r 99 ./client &
+./client &
 echo $! > client.pid
 
 wait $(cat client.pid)

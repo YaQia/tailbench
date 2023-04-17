@@ -14,6 +14,6 @@ cp moses.ini.template moses.ini
 sed -i -e "s#@DATA_ROOT#$DATA_ROOT#g" moses.ini
 
 TBENCH_QPS=${QPS} TBENCH_MAXREQS=${MAXREQS} TBENCH_WARMUPREQS=${WARMUPREQS} \
-    TBENCH_MINSLEEPNS=10000 chrt -r 99 ${BIN} -config ./moses.ini \
+    TBENCH_MINSLEEPNS=10000 ${BIN} -config ./moses.ini \
     -input-file ${DATA_ROOT}/moses/testTerms \
     -threads ${THREADS} -num-tasks 100000 -verbose 0
