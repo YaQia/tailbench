@@ -4,7 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source ${DIR}/../configs.sh
 
 NSERVERS=1
-QPS=500
+QPS=${QPS:-500}
 WARMUPREQS=1000
 REQUESTS=3000
 

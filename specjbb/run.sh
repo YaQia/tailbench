@@ -8,13 +8,13 @@ mkdir -p results
 
 # Run specjbb
 TBENCH_PATH=../harness
-
+QPS=${QPS:-5000}
 export LD_LIBRARY_PATH=${TBENCH_PATH}:${LD_LIBRARY_PATH}
 
 export CLASSPATH=./build/dist/jbb.jar:./build/dist/check.jar:${TBENCH_PATH}/tbench.jar
 
 export PATH=${JDK_PATH}/bin:${PATH}
-export TBENCH_QPS=5000 
+export TBENCH_QPS=${QPS} 
 export TBENCH_MAXREQS=25000 
 export TBENCH_WARMUPREQS=25000 
 export TBENCH_MINSLEEPNS=10000
